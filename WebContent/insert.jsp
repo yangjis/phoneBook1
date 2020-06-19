@@ -4,6 +4,7 @@
 <%@page import = "com.javaex.dao.PhoneDao" %>
     
 <%
+	request.setCharacterEncoding("UTF-8");
 	String name = request.getParameter("name");
 	String hp = request.getParameter("hp");
 	String company = request.getParameter("company");
