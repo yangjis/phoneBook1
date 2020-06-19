@@ -11,7 +11,7 @@
 	PersonVo personVo = new PersonVo(name, hp, company);
 	
 	PhoneDao phoneDao = new PhoneDao();
-	System.out.println(phoneDao.personInsert(personVo));
+	phoneDao.personInsert(personVo);
 	
 	response.sendRedirect("./list.jsp");// ./list.jsp페이지로 리다이렉트해라 	리다이렉트란? 데이터를 계속 유지하지않고 새페이지로 이동
  %>
