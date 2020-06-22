@@ -39,11 +39,13 @@
 				<td>회사(company)</td>
 				<td><%=personVo.getCompany() %></td>
 			</tr>
+			<tr>
+				<td><a href="updateForm.jsp?person_id=<%=personVo.getPersonId()%>">수정</td>
+				<td><a href= "deletePerson.jsp?person_id=<%=personVo.getPersonId()%>"> 삭제</a></td>
+			</tr>
 	</table>
 	<br>
 	<%} %>
 	<a href="./writeForm.jsp">추가번호 등록</a>
-	<a href="./deleteForm.jsp">번호 삭제</a>
-	<a href="./updateForm.jsp">번호 수정</a>
 </body>
 </html>
