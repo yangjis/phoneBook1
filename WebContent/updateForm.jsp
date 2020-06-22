@@ -3,12 +3,11 @@
     
 <%@page import = "com.javaex.dao.PhoneDao" %>
 <%@page import = "com.javaex.vo.PersonVo"%>
-<%@page import = "java.util.List" %>
     
 <%
 	PhoneDao phoneDao = new PhoneDao();
-	List<PersonVo> personList = phoneDao.getPersonList();
 	String person_id = request.getParameter("person_id");
+	PersonVo personVo = phoneDao.getPerson(Integer.parseInt(person_id));
 %>
 <!DOCTYPE html>
 <html>
@@ -21,13 +20,13 @@
 	<form action="./updatePerson.jsp" mathod="get">
 		<input type = "hidden" name = "person_id" value="<%=person_id %>">
 		<label name = "name">이름(name) 
-		<input type = "text" name = "name"></label><br>
+		<input type = "text" name = "name" value="<%=personVo.getName()%>"></label><br>
 		
 		<label name = "hp">휴대전화(hp)
-		<input type = "text" name = "hp"></label><br>
+		<input type = "text" name = "hp" value = "<%=personVo.getHp()%>"></label><br>
 		
 		<label name = "company">회사 번호(company)
-		<input type = "text" name = "company"></label><br>
+		<input type = "text" name = "company" value = "<%=personVo.getCompany()%>"></label><br>
 	
 		<button type = submit>수정</button>
 	</form>
