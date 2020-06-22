@@ -16,7 +16,7 @@ public class PhoneTest {
 //		PersonVo personVo = new PersonVo("양지선","010-7894-1238","02-45637895");
 //		System.out.println(dao.personInsert(personVo));
 		
-		System.out.println(dao.getPerson(1));
+//		System.out.println(dao.getPerson(1));
 		
 	}
 

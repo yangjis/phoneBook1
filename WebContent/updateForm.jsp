@@ -6,8 +6,7 @@
     
 <%
 	PhoneDao phoneDao = new PhoneDao();
-	String person_id = request.getParameter("person_id");
-	PersonVo personVo = phoneDao.getPerson(Integer.parseInt(person_id));
+	PersonVo personVo = phoneDao.getPerson(Integer.parseInt(request.getParameter("person_id")));
 %>
 <!DOCTYPE html>
 <html>
@@ -18,7 +17,8 @@
 <body>
 	<h1>주소록 수정</h1>
 	<form action="./updatePerson.jsp" mathod="get">
-		<input type = "hidden" name = "person_id" value="<%=person_id %>">
+		<input type = "hidden" name = "person_id" value="<%=personVo.getPersonId() %>">
+		
 		<label name = "name">이름(name) 
 		<input type = "text" name = "name" value="<%=personVo.getName()%>"></label><br>
 		
@@ -27,7 +27,7 @@
 		
 		<label name = "company">회사 번호(company)
 		<input type = "text" name = "company" value = "<%=personVo.getCompany()%>"></label><br>
-	
+		<br>
 		<button type = submit>수정</button>
 	</form>
 	

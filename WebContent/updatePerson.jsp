@@ -10,9 +10,8 @@
 	String hp = request.getParameter("hp");
 	String company = request.getParameter("company");
 	
-	PersonVo personVo = new PersonVo((Integer.parseInt(person_id)), name, hp, company);
 	PhoneDao phoneDao = new PhoneDao();
-	phoneDao.personUpdate(personVo);
+	phoneDao.personUpdate(new PersonVo((Integer.parseInt(person_id)), name, hp, company));
 	
 	response.sendRedirect("./list.jsp");
 	
